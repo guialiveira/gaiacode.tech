@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --color-bg: #071012;
+  --color-bg-page: #020607;
+  --color-text: #bfd0c8;
+  --color-text-muted: #8ea29a;
+  --color-text-strong: #f4f8f5;
+  --color-accent: #8de7b4;
+  --font-body: 'Manrope', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  font-weight: 500;
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at top, rgba(84, 143, 255, 0.15), transparent 30%),
+    linear-gradient(180deg, #061012 0%, #030607 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--color-bg-page);
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--color-text-strong);
+}
+
+h1 {
+  max-width: 11ch;
+  font-size: clamp(3.3rem, 8vw, 6.4rem);
+  letter-spacing: -0.05em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  letter-spacing: -0.04em;
+  margin-bottom: 14px;
+}
+
+h3 {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+}
+
+p {
+  margin: 0;
+}
+
+strong {
+  color: var(--color-text-strong);
+}
