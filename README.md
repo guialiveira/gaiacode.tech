@@ -24,9 +24,10 @@ O projeto inclui `vercel.json` para suportar rotas do frontend no deploy.
 
 ### Dokploy
 
-Este projeto deve ser publicado como `Static` no Dokploy.
+Para publicar via Docker no Dokploy:
 
-- Build type: `Static`
-- SPA: habilitado
-- Build Path: raiz do repositório, nunca `./Dockerfile`
-- Public directory / output: `dist`
+- Build type: `Dockerfile`
+- Dockerfile path: `Dockerfile`
+- Docker context: raiz do repositório
+- Porta interna: `3000`
+- Domínio/porta no Dokploy: apontar para `3000`
