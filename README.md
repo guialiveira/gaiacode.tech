@@ -28,5 +28,5 @@ Para subir como `Application`, use o `Dockerfile` na raiz do projeto. A imagem c
 
 - Build type: `Application`
 - Build command: `npm run build` se o painel pedir comando manual
-- Porta: `80`
+- Porta: `3000`
 - Root/publish: usar o `Dockerfile` da raiz
