@@ -24,9 +24,9 @@ O projeto inclui `vercel.json` para suportar rotas do frontend no deploy.
 
 ### Dokploy
 
-Para subir como `Application`, use o `Dockerfile` na raiz do projeto. A imagem compila o Vite e serve o `dist/` com Nginx.
+Este projeto deve ser publicado como `Static` no Dokploy.
 
-- Build type: `Application`
-- Build command: `npm run build` se o painel pedir comando manual
-- Porta: `3000`
-- Root/publish: usar o `Dockerfile` da raiz
+- Build type: `Static`
+- SPA: habilitado
+- Build Path: raiz do repositório, nunca `./Dockerfile`
+- Public directory / output: `dist`
