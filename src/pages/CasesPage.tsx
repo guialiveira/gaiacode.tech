@@ -1,26 +1,35 @@
 import { Link } from 'react-router-dom'
 import { usePageMeta } from '../hooks/usePageMeta'
-import { backgroundRefs, caseStudies, contactLinks, sectors } from '../siteData'
+import { backgroundRefs, caseStudies, contactLinks, sectors, stats } from '../siteData'
 
 export function CasesPage() {
   usePageMeta(
     'Cases | gaiacode',
-    'Historico de experiencia e contextos de entrega usados como base para o posicionamento institucional da gaiacode.',
+    'Repertorio da gaiacode em sistemas corporativos, setor publico, energia, seguros, operacoes de campo e IA aplicada.',
   )
 
   return (
     <main>
       <section className="page-hero">
         <p className="eyebrow">Cases e repertorio</p>
-        <h1>Experiencia aplicada a problemas reais, reorganizada como marca de empresa.</h1>
+        <h1>Experiencia real em operacoes que nao podem depender de improviso.</h1>
         <p className="page-lead">
-          Esta pagina nao vende volume ficticio. Ela mostra o tipo de contexto onde a base tecnica
-          ja foi testada e o que isso permite entregar agora sob a marca gaiacode.
+          A gaiacode organiza como empresa uma base tecnica formada em produtos, sistemas internos,
+          APIs, automacoes, dados e projetos corporativos no Brasil e no exterior.
         </p>
       </section>
 
-      <section className="trust-strip" aria-label="Historico de contexto">
-        <p>Ambientes, marcas e operacoes que ajudam a formar esse repertorio:</p>
+      <section className="stats-band" aria-label="Indicadores de experiencia">
+        {stats.map((item) => (
+          <article key={item.label}>
+            <strong>{item.value}</strong>
+            <span>{item.label}</span>
+          </article>
+        ))}
+      </section>
+
+      <section className="trust-band" aria-label="Empresas e contextos">
+        <p>Repertorio construido em ambientes como</p>
         <div className="trust-list">
           {backgroundRefs.map((item) => (
             <span key={item}>{item}</span>
@@ -30,21 +39,24 @@ export function CasesPage() {
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">Leituras de caso</p>
-          <h2>Recortes de experiencia que sustentam o novo posicionamento.</h2>
+          <p className="eyebrow">Recortes de experiencia</p>
+          <h2>Problemas de negocio traduzidos em software, integracao e evolucao tecnica.</h2>
         </div>
 
-        <div className="case-grid">
-          {caseStudies.map((study) => (
-            <article className="case-card" key={study.title}>
-              <p className="case-label">{study.clientLine}</p>
-              <h3>{study.title}</h3>
-              <p>{study.summary}</p>
-              <ul>
-                {study.outcomes.map((outcome) => (
-                  <li key={outcome}>{outcome}</li>
-                ))}
-              </ul>
+        <div className="case-list">
+          {caseStudies.map((study, index) => (
+            <article className="case-row" key={study.title}>
+              <span className="case-index">{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <p className="case-label">{study.clientLine}</p>
+                <h3>{study.title}</h3>
+                <p>{study.summary}</p>
+                <ul>
+                  {study.outcomes.map((outcome) => (
+                    <li key={outcome}>{outcome}</li>
+                  ))}
+                </ul>
+              </div>
             </article>
           ))}
         </div>
@@ -52,8 +64,8 @@ export function CasesPage() {
 
       <section className="section section-alt">
         <div className="section-heading">
-          <p className="eyebrow">Setores onde isso conversa bem</p>
-          <h2>Operacoes com regra de negocio, dados dispersos e demanda por clareza tecnica.</h2>
+          <p className="eyebrow">Setores</p>
+          <h2>Contextos onde experiencia tecnica precisa conversar com operacao.</h2>
         </div>
 
         <div className="sector-list">
@@ -63,18 +75,11 @@ export function CasesPage() {
         </div>
       </section>
 
-      <section className="section cta-section">
-        <div className="cta-card">
-          <div>
-            <p className="eyebrow">Proximo movimento</p>
-            <h2>Se o seu contexto parece com algum desses cenarios, o site ja cumpriu o papel.</h2>
-            <p>
-              A proposta da pagina de cases e reduzir duvida de capacidade. A partir daqui, a
-              conversa precisa sair do geral e entrar no seu problema especifico.
-            </p>
-          </div>
-
-          <div className="cta-actions">
+      <section className="cta-section">
+        <div className="cta-band">
+          <p className="eyebrow">Conversa comercial</p>
+          <h2>O melhor case para avaliar agora e o problema que a sua empresa precisa resolver.</h2>
+          <div className="cta-actions-inline">
             <a
               className="button button-primary"
               href={contactLinks.whatsapp}

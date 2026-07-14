@@ -1,16 +1,13 @@
 export const contactLinks = {
   whatsapp:
-    'https://wa.me/5562996749356?text=Ola%2C%20Guilherme.%20Vi%20o%20site%20da%20gaiacode%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto.',
-  linkedin: 'https://www.linkedin.com/in/guilherme-alves-profile',
-  github: 'https://github.com/guialiveira',
-  email: 'mailto:guii05@hotmail.com',
+    'https://wa.me/5562996749356?text=Ola%2C%20equipe%20gaiacode.%20Vi%20o%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto.',
+  email: 'mailto:atendimento@gaiacode.tech',
 }
 
-export const credibilityPillars = [
-  'Mais de 10 anos em tecnologia',
-  'Experiencia com web, APIs, integracoes e IA',
-  'Atuacao em projetos no Brasil e exterior',
-  'Visao de produto, engenharia e operacao',
+export const stats = [
+  { value: '+10', label: 'anos em tecnologia' },
+  { value: '6+', label: 'setores atendidos' },
+  { value: 'Brasil', label: 'e exterior' },
 ]
 
 export const backgroundRefs = [
@@ -18,34 +15,30 @@ export const backgroundRefs = [
   'Caixa Seguradora',
   'Auvo Tecnologia',
   'TCE-GO',
-  'FIEB',
   'Capgemini',
+  'FIEB',
+  'Havaianas',
+  'ANTT',
 ]
 
-export const painPoints = [
+export const beliefCards = [
   {
     index: '01',
-    title: 'Ideias que precisam virar produto',
+    title: 'Tecnologia precisa resolver operacao',
     description:
-      'Planejamento enxuto, MVP, sistema web e evolucao continua para transformar intencao em operacao real.',
+      'Codigo, IA e automacao so importam quando reduzem atrito, aumentam controle ou destravam uma decisao de negocio.',
   },
   {
     index: '02',
-    title: 'Sistemas que precisam evoluir sem recomecar',
+    title: 'Projeto bom nasce com recorte claro',
     description:
-      'Refatoracao orientada a negocio, organizacao tecnica e melhoria de performance com menor atrito.',
+      'Antes de sair construindo, entendemos contexto, risco, prioridade e o menor caminho para colocar algo util em producao.',
   },
   {
     index: '03',
-    title: 'Processos manuais que drenam tempo',
+    title: 'Evoluir e diferente de refazer tudo',
     description:
-      'Conectamos APIs, dados e fluxos internos para reduzir retrabalho e dar previsibilidade a operacao.',
-  },
-  {
-    index: '04',
-    title: 'IA aplicada em contexto util',
-    description:
-      'IA para classificacao, geracao assistida, analise e produtividade, sempre ligada a um processo real.',
+      'Sistemas existentes podem ganhar arquitetura, performance e previsibilidade sem jogar fora o que ja sustenta a empresa.',
   },
 ]
 
@@ -53,84 +46,86 @@ export const services = [
   {
     title: 'Software sob medida',
     description:
-      'Portais, plataformas internas, sistemas operacionais e produtos digitais desenhados para regras reais de negocio.',
-    bullets: ['MVPs e novos produtos', 'Sistemas internos', 'Portais e backoffices'],
+      'Sistemas web, portais, backoffices e produtos digitais construidos para regras reais de negocio.',
+    bullets: ['MVPs e produtos digitais', 'Sistemas internos', 'Portais e dashboards'],
   },
   {
     title: 'Automacoes e integracoes',
     description:
-      'Fluxos digitais mais simples entre pessoas, planilhas, ERPs, CRMs, APIs e rotinas repetitivas.',
-    bullets: ['Integracoes entre sistemas', 'Orquestracao de processos', 'Reducao de trabalho manual'],
+      'Fluxos que conectam pessoas, planilhas, APIs, CRMs, ERPs e rotinas repetitivas com mais confiabilidade.',
+    bullets: ['Integracoes entre sistemas', 'Rotinas automatizadas', 'Dados fluindo sem retrabalho'],
   },
   {
     title: 'IA aplicada',
     description:
-      'Funcionalidades inteligentes para acelerar atendimento, analise, conteudo e tomada de decisao.',
-    bullets: ['OpenAI API', 'Copilots e assistentes', 'Fluxos com IA e validacao'],
+      'Assistentes, classificadores, geracao assistida e fluxos inteligentes integrados ao processo certo.',
+    bullets: ['OpenAI API', 'Copilots internos', 'Automacao com validacao humana'],
   },
   {
     title: 'Arquitetura e evolucao',
     description:
-      'Apoio tecnico para organizar bases existentes, melhorar manutencao e preparar crescimento com menos atrito.',
-    bullets: ['APIs e microsservicos', 'Ajustes de arquitetura', 'Boas praticas e entrega continua'],
+      'Organizacao de bases legadas, APIs, microsservicos, CI/CD e melhoria continua de sistemas em uso.',
+    bullets: ['.NET e APIs REST', 'DDD e microsservicos', 'Pipelines e boas praticas'],
   },
 ]
 
 export const processSteps = [
   {
-    title: 'Diagnostico e direcao',
+    title: 'Entender',
     description:
-      'Entendimento do contexto, mapeamento de gargalos, definicao de escopo e proposta tecnica clara.',
+      'Mapeamos problema, contexto, usuarios, sistemas envolvidos e o impacto esperado para separar urgencia de ruido.',
   },
   {
-    title: 'Entrega orientada a valor',
+    title: 'Construir',
     description:
-      'Construcao iterativa com prioridade no que move a operacao, com visibilidade de progresso e decisao.',
+      'Transformamos o recorte aprovado em software funcional, com ciclos curtos e foco no que ja gera valor operacional.',
   },
   {
-    title: 'Evolucao sem improviso',
+    title: 'Evoluir',
     description:
-      'Suporte a continuidade com base tecnica solida, dados organizados e espaco para escalar com seguranca.',
+      'Medimos o uso, ajustamos o caminho e abrimos novos ciclos para escalar sem perder controle tecnico.',
   },
 ]
 
 export const sectors = [
-  'Operacoes corporativas',
-  'Energia e utilidades',
-  'Seguros e servicos financeiros',
   'Setor publico',
-  'Logistica e equipes externas',
-  'Industria, educacao e servicos',
+  'Energia e utilidades',
+  'Seguros',
+  'Operacoes de campo',
+  'Industria',
+  'Servicos financeiros',
+  'Educacao e instituicoes',
+  'Produtos digitais',
 ]
 
 export const caseStudies = [
   {
-    title: 'Seguros e energia com regras de negocio pesadas',
-    clientLine: 'Contextos ligados a Caixa Seguradora e Shell / Raizen',
+    title: 'Sistemas corporativos em seguros e energia',
+    clientLine: 'Caixa Seguradora e Shell / Raizen',
     summary:
-      'Evolucao de aplicacoes corporativas com C#, APIs REST, autenticacao, SQL Server e manutencao de regras de negocio em ambientes de alta responsabilidade.',
+      'Evolucao de aplicacoes com C#, ASP.NET Core, APIs REST, JWT, SQL Server e regras de negocio em ambientes de alta responsabilidade.',
     outcomes: [
-      'Mais confiabilidade em fluxos internos',
+      'Fluxos internos mais confiaveis',
       'Integracoes mais organizadas',
-      'Base melhor para manutencao e evolucao',
+      'Melhor manutencao de sistemas existentes',
     ],
   },
   {
-    title: 'Operacao de campo, mapas e rotina externa',
-    clientLine: 'Experiencia aplicada na Auvo Tecnologia',
+    title: 'Gestao de equipes externas e geolocalizacao',
+    clientLine: 'Auvo Tecnologia',
     summary:
-      'Desenvolvimento de funcionalidades para gestao de equipes externas, geolocalizacao, integracao de dados e suporte a operacoes com impacto direto no dia a dia.',
+      'Funcionalidades para conectar mapas, operacao de campo, regras fiscais, sistemas web/mobile e visibilidade de equipes externas.',
     outcomes: [
       'Mais visibilidade operacional',
       'Automacao de rotinas repetitivas',
-      'Ligacao mais clara entre dados e operacao',
+      'Dados conectados a operacao',
     ],
   },
   {
     title: 'Sistemas internos para setor publico',
-    clientLine: 'Historico em projetos para TCE-GO e outros ambientes institucionais',
+    clientLine: 'Tribunal de Contas do Estado de Goias',
     summary:
-      'Construcao e evolucao de sistemas com foco em confiabilidade, acessibilidade, rotinas institucionais e suporte a usuarios internos.',
+      'Construcao e evolucao de sistemas institucionais com foco em confiabilidade, acessibilidade, dados e suporte a usuarios internos.',
     outcomes: [
       'Evolucao de sistemas legados',
       'Organizacao de dados e processos',
@@ -139,23 +134,30 @@ export const caseStudies = [
   },
 ]
 
+export const stackItems = [
+  '.NET',
+  'ASP.NET Core',
+  'React',
+  'TypeScript',
+  'SQL Server',
+  'PostgreSQL',
+  'Docker',
+  'Azure DevOps',
+  'AWS',
+  'OpenAI API',
+]
+
 export const contactOptions = [
   {
     label: 'WhatsApp',
     value: '+55 62 99674-9356',
     href: contactLinks.whatsapp,
-    note: 'Canal mais rapido para iniciar conversa sobre projeto.',
+    note: 'Canal direto para tirar uma demanda do abstrato e iniciar o diagnostico.',
   },
   {
     label: 'Email',
-    value: 'guii05@hotmail.com',
+    value: 'atendimento@gaiacode.tech',
     href: contactLinks.email,
-    note: 'Melhor para enviar contexto, escopo inicial ou materiais.',
-  },
-  {
-    label: 'LinkedIn',
-    value: 'Guilherme Alves',
-    href: contactLinks.linkedin,
-    note: 'Bom ponto de apoio para validar historico e repertorio.',
+    note: 'Melhor para enviar escopo, contexto, briefing ou material de apoio.',
   },
 ]

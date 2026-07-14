@@ -2,7 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 import { contactLinks } from '../siteData'
 
 const navigation = [
-  { to: '/', label: 'Inicio', end: true },
+  { to: '/', label: 'Home', end: true },
   { to: '/servicos', label: 'Servicos' },
   { to: '/cases', label: 'Cases' },
   { to: '/contato', label: 'Contato' },
@@ -18,7 +18,7 @@ export function SiteLayout() {
           </span>
           <span className="brand-text">
             <strong>gaiacode</strong>
-            <span>software, automacao e IA</span>
+            <span>tecnologia que vira operacao</span>
           </span>
         </NavLink>
 
@@ -41,7 +41,7 @@ export function SiteLayout() {
           target="_blank"
           rel="noreferrer"
         >
-          Falar sobre projeto
+          Fale conosco
         </a>
       </header>
 
@@ -50,16 +50,18 @@ export function SiteLayout() {
       <footer className="footer">
         <div className="footer-brand">
           <strong>gaiacode</strong>
-          <p>Software sob medida, automacoes, integracoes e IA aplicada para operacoes reais.</p>
+          <p>Software sob medida, automacoes, integracoes e IA aplicada para empresas.</p>
         </div>
+
+        <p className="footer-note">
+          Uma operacao de tecnologia focada em sistemas, automacoes, integracoes e IA aplicada
+          para empresas que precisam evoluir com consistencia.
+        </p>
 
         <div className="footer-links">
           <NavLink to="/servicos">Servicos</NavLink>
           <NavLink to="/cases">Cases</NavLink>
           <NavLink to="/contato">Contato</NavLink>
-          <a href={contactLinks.github} target="_blank" rel="noreferrer">
-            GitHub
-          </a>
         </div>
       </footer>
     </div>

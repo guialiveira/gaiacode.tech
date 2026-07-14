@@ -1,47 +1,46 @@
 import { Link } from 'react-router-dom'
 import { usePageMeta } from '../hooks/usePageMeta'
-import { contactLinks, processSteps, services } from '../siteData'
+import { contactLinks, processSteps, services, stackItems } from '../siteData'
 
-const deliveryBlocks = [
+const formats = [
   {
-    title: 'Descoberta e escopo',
+    title: 'MVP e produto digital',
     description:
-      'Levantamento de contexto, objetivos, restricoes tecnicas e definicao do recorte inicial que faz sentido para negocio e entrega.',
+      'Para ideias que precisam sair do PowerPoint e virar uma primeira versao utilizavel, validavel e preparada para evoluir.',
   },
   {
-    title: 'Construcao e integracao',
+    title: 'Sistema interno',
     description:
-      'Implementacao do produto ou fluxo com prioridade para operacao, manutencao e conexao com os sistemas que ja existem.',
+      'Para empresas que dependem de planilhas, controles manuais ou ferramentas desconectadas para manter a operacao rodando.',
   },
   {
-    title: 'Evolucao e suporte',
+    title: 'Evolucao tecnica',
     description:
-      'Melhorias progressivas, ajuste de arquitetura, monitoramento do que trava a operacao e abertura de proximos ciclos.',
+      'Para sistemas que ja existem, mas precisam de arquitetura, performance, integracoes, testes ou organizacao de base.',
   },
 ]
 
 export function ServicesPage() {
   usePageMeta(
     'Servicos | gaiacode',
-    'Servicos da gaiacode em software sob medida, automacoes, integracoes, IA aplicada e evolucao de arquitetura.',
+    'Servicos da gaiacode em software sob medida, automacoes, integracoes, IA aplicada e evolucao de sistemas.',
   )
 
   return (
     <main>
       <section className="page-hero">
         <p className="eyebrow">Servicos</p>
-        <h1>Oferta clara para quem precisa transformar problema em sistema.</h1>
+        <h1>Solucoes digitais para empresas que precisam operar melhor.</h1>
         <p className="page-lead">
-          A gaiacode se posiciona como empresa para assumir escopo com mais clareza comercial e
-          mais consistencia tecnica. Os servicos abaixo podem entrar em projetos novos, operacoes
-          em crescimento ou sistemas que precisam ser reorganizados.
+          A gaiacode combina software sob medida, automacao, integracao e IA aplicada para criar
+          sistemas que reduzem retrabalho, conectam dados e sustentam crescimento.
         </p>
       </section>
 
       <section className="section">
-        <div className="services-grid">
+        <div className="services-grid services-grid-large">
           {services.map((service) => (
-            <article className="service-card" key={service.title}>
+            <article className="service-card service-card-featured" key={service.title}>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
               <ul>
@@ -56,50 +55,51 @@ export function ServicesPage() {
 
       <section className="section section-alt">
         <div className="section-heading">
-          <p className="eyebrow">Como esses servicos entram</p>
-          <h2>Nem toda demanda precisa de projeto grande. Precisa de recorte correto.</h2>
+          <p className="eyebrow">Formatos de entrada</p>
+          <h2>O projeto comeca pelo recorte certo.</h2>
         </div>
 
         <div className="process-grid">
-          {deliveryBlocks.map((block, index) => (
-            <article className="process-card" key={block.title}>
+          {formats.map((format, index) => (
+            <article className="process-card" key={format.title}>
               <span className="process-index">0{index + 1}</span>
-              <h3>{block.title}</h3>
-              <p>{block.description}</p>
+              <h3>{format.title}</h3>
+              <p>{format.description}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section">
-        <div className="section-heading">
-          <p className="eyebrow">Metodo</p>
-          <h2>A forma de conduzir importa tanto quanto a stack.</h2>
-        </div>
-
-        <div className="process-grid">
-          {processSteps.map((step, index) => (
-            <article className="process-card" key={step.title}>
-              <span className="process-index">0{index + 1}</span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section cta-section">
-        <div className="cta-card">
-          <div>
-            <p className="eyebrow">Conversa inicial</p>
-            <h2>Se a demanda ainda esta nebulosa, a primeira entrega pode ser clareza.</h2>
-            <p>
-              A entrada pode comecar por diagnostico, escopo tecnico ou desenho do primeiro ciclo.
-              Nao precisa chegar com tudo decidido para a conversa acontecer.
-            </p>
+      <section className="section dual-section">
+        <div className="dual-block">
+          <p className="eyebrow">Como trabalhamos</p>
+          <h2>Clareza antes de codigo. Entrega antes de discurso.</h2>
+          <div className="process-mini-list">
+            {processSteps.map((step) => (
+              <article key={step.title}>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </article>
+            ))}
           </div>
+        </div>
 
-          <div className="cta-actions">
+        <div className="dual-block dual-block-accent">
+          <p className="eyebrow">Base tecnica</p>
+          <h2>Stack moderna para produtos e sistemas corporativos.</h2>
+          <div className="stack-list">
+            {stackItems.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="cta-section">
+        <div className="cta-band">
+          <p className="eyebrow">Proximo passo</p>
+          <h2>Se a demanda ainda esta aberta, o primeiro servico pode ser estruturar o caminho.</h2>
+          <div className="cta-actions-inline">
             <a
               className="button button-primary"
               href={contactLinks.whatsapp}
@@ -108,8 +108,8 @@ export function ServicesPage() {
             >
               Falar sobre escopo
             </a>
-            <Link className="button button-secondary" to="/contato">
-              Ver canais de contato
+            <Link className="button button-secondary" to="/cases">
+              Ver repertorio
             </Link>
           </div>
         </div>

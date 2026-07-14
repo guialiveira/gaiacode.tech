@@ -2,34 +2,34 @@ import { usePageMeta } from '../hooks/usePageMeta'
 import { contactLinks, contactOptions, processSteps } from '../siteData'
 
 const entryPoints = [
-  'Novo produto ou MVP',
-  'Sistema existente travando crescimento',
-  'Automacao de processo manual',
-  'Integracao entre ferramentas e dados',
-  'Funcionalidade com IA aplicada',
+  'Criar um MVP ou produto digital',
+  'Modernizar um sistema existente',
+  'Automatizar um processo manual',
+  'Integrar ferramentas, APIs e dados',
+  'Aplicar IA em um fluxo real de trabalho',
 ]
 
 export function ContactPage() {
   usePageMeta(
     'Contato | gaiacode',
-    'Entre em contato com a gaiacode para conversar sobre software sob medida, automacoes, integracoes e IA aplicada.',
+    'Fale com a gaiacode para conversar sobre software sob medida, automacoes, integracoes e IA aplicada.',
   )
 
   return (
     <main>
-      <section className="page-hero">
+      <section className="page-hero contact-hero">
         <p className="eyebrow">Contato</p>
-        <h1>Conversa boa comeca com contexto claro, nao com formulario frio.</h1>
+        <h1>Vamos transformar uma demanda em plano de execucao.</h1>
         <p className="page-lead">
-          Esta pagina organiza os canais e mostra qual tipo de demanda faz sentido para a
-          gaiacode. O objetivo e encurtar a distancia entre necessidade e execucao.
+          Envie o contexto do projeto, processo ou sistema. A primeira conversa serve para entender
+          objetivo, restricoes, urgencia e o melhor caminho tecnico para sair do ponto atual.
         </p>
       </section>
 
       <section className="section dual-section">
-        <div className="dual-card dual-card-highlight">
+        <div className="dual-block dual-block-accent">
           <p className="eyebrow">Canais</p>
-          <h2>Escolha o ponto de entrada mais pratico.</h2>
+          <h2>Comece pelo canal mais pratico.</h2>
           <div className="contact-grid">
             {contactOptions.map((option) => (
               <a
@@ -47,9 +47,9 @@ export function ContactPage() {
           </div>
         </div>
 
-        <div className="dual-card">
-          <p className="eyebrow">Demandas que fazem sentido</p>
-          <h2>Boa conversa comercial depende de problema bem colocado.</h2>
+        <div className="dual-block">
+          <p className="eyebrow">Boas entradas</p>
+          <h2>Demandas onde a gaiacode tende a gerar mais valor.</h2>
           <ul className="simple-list">
             {entryPoints.map((item) => (
               <li key={item}>{item}</li>
@@ -58,10 +58,10 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-alt">
         <div className="section-heading">
-          <p className="eyebrow">Como a conversa tende a andar</p>
-          <h2>Sem teatro de agencia. O processo e direto.</h2>
+          <p className="eyebrow">Proximos passos</p>
+          <h2>Da conversa inicial ao primeiro ciclo de entrega.</h2>
         </div>
 
         <div className="process-grid">
@@ -75,18 +75,11 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="section cta-section">
-        <div className="cta-card">
-          <div>
-            <p className="eyebrow">Acesso rapido</p>
-            <h2>Se ja existe urgencia, va direto para o WhatsApp.</h2>
-            <p>
-              Quando o caso exige diagnostico ou decisao rapida, o WhatsApp encurta a etapa de
-              alinhamento. Se preferir, o email continua disponivel para contextos mais extensos.
-            </p>
-          </div>
-
-          <div className="cta-actions">
+      <section className="cta-section">
+        <div className="cta-band">
+          <p className="eyebrow">Acesso rapido</p>
+          <h2>Quando a demanda ja existe, o WhatsApp acelera o alinhamento.</h2>
+          <div className="cta-actions-inline">
             <a
               className="button button-primary"
               href={contactLinks.whatsapp}
@@ -97,14 +90,6 @@ export function ContactPage() {
             </a>
             <a className="button button-secondary" href={contactLinks.email}>
               Enviar email
-            </a>
-            <a
-              className="button button-ghost"
-              href={contactLinks.linkedin}
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
             </a>
           </div>
         </div>
