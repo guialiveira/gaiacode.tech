@@ -30,14 +30,9 @@ export function HomePage() {
             projetos do papel, modernizar operacoes ou escalar solucoes existentes.
           </p>
           <div className="hero-actions">
-            <a
-              className="button button-primary"
-              href={contactLinks.whatsapp}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <Link className="button button-primary" to="/contato">
               Falar com a gaiacode
-            </a>
+            </Link>
             <Link className="button button-secondary" to="/servicos">
               Conhecer solucoes
             </Link>
@@ -190,10 +185,10 @@ export function HomePage() {
               target="_blank"
               rel="noreferrer"
             >
-              Chamar no WhatsApp
+              Falar com um consultor
             </a>
             <Link className="button button-secondary" to="/contato">
-              Outros canais
+              Canais de atendimento
             </Link>
           </div>
         </div>

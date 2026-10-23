@@ -149,15 +149,18 @@ export const stackItems = [
 
 export const contactOptions = [
   {
-    label: 'WhatsApp',
-    value: '+55 62 99674-9356',
-    href: contactLinks.whatsapp,
-    note: 'Canal direto para tirar uma demanda do abstrato e iniciar o diagnostico.',
-  },
-  {
-    label: 'Email',
+    label: 'Atendimento por e-mail',
     value: 'atendimento@gaiacode.tech',
     href: contactLinks.email,
-    note: 'Melhor para enviar escopo, contexto, briefing ou material de apoio.',
+    note: 'Envie dúvidas, solicitações, propostas ou o contexto do seu projeto para a nossa equipe.',
+    action: 'Enviar e-mail',
+    detail: 'Abre seu aplicativo de e-mail.',
+  },
+  {
+    label: 'Fale com um consultor',
+    value: '+55 62 99674-9356',
+    href: contactLinks.whatsapp,
+    note: 'Converse sobre sua demanda e alinhe possibilidades para o próximo passo com a gaiacode.',
+    action: 'Conversar no WhatsApp',
   },
 ]

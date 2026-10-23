@@ -35,14 +35,9 @@ export function SiteLayout() {
           ))}
         </nav>
 
-        <a
-          className="button button-nav"
-          href={contactLinks.whatsapp}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <NavLink className="button button-nav" to="/contato">
           Fale conosco
-        </a>
+        </NavLink>
       </header>
 
       <Outlet />
@@ -54,8 +49,11 @@ export function SiteLayout() {
         </div>
 
         <p className="footer-note">
-          Uma operacao de tecnologia focada em sistemas, automacoes, integracoes e IA aplicada
-          para empresas que precisam evoluir com consistencia.
+          <span>Atendimento</span>
+          <a href={contactLinks.email}>atendimento@gaiacode.tech</a>
+          <a href={contactLinks.whatsapp} target="_blank" rel="noreferrer">
+            Falar com um consultor no WhatsApp
+          </a>
         </p>
 
         <div className="footer-links">

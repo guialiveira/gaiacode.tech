@@ -106,7 +106,7 @@ export function ServicesPage() {
               target="_blank"
               rel="noreferrer"
             >
-              Falar sobre escopo
+              Falar com um consultor
             </a>
             <Link className="button button-secondary" to="/cases">
               Ver repertorio

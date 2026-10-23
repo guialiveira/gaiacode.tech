@@ -86,7 +86,7 @@ export function CasesPage() {
               target="_blank"
               rel="noreferrer"
             >
-              Conversar sobre contexto
+              Falar com um consultor
             </a>
             <Link className="button button-secondary" to="/contato">
               Ir para contato
