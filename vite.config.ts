@@ -9,6 +9,7 @@ export default defineConfig({
     transformIndexHtml(html, context) {
       const path = context.path.replace(/\/+$/, '') || '/'
       return html.replace('<!--seo-head-->', renderSeoHead(path in seoPages ? path : '/'))
+        .replace('<html lang="pt-BR">', `<html lang="${path === '/en' || path.startsWith('/en/') ? 'en' : 'pt-BR'}">`)
     },
   }],
 })

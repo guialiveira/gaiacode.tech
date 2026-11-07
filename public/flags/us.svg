@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 18">
+  <path fill="#b22234" d="M0 0h26v18H0z"/>
+  <path stroke="#fff" stroke-width="1.38" d="M0 2.08h26M0 4.85h26M0 7.62h26M0 10.38h26M0 13.15h26M0 15.92h26"/>
+  <path fill="#3c3b6e" d="M0 0h11v9.69H0z"/>
+  <defs><pattern id="s" width="2" height="2" patternUnits="userSpaceOnUse"><path fill="#fff" d="m1 .3.17.45h.48l-.39.3.15.46L1 1.23l-.41.28.15-.46-.39-.3h.48z"/></pattern></defs>
+  <path fill="url(#s)" d="M.5.5h10v9H.5z"/>
+</svg>

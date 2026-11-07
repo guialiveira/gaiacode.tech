@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build && node scripts/prerender.mjs",
     "lint": "oxlint",
     "check:seo": "node scripts/check-seo.mjs",
+    "check:translations": "node scripts/check-translations.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

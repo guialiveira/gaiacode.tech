@@ -1,3 +1,4 @@
+import { useLanguage } from '../language'
 import { Link } from 'react-router-dom'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { contactLinks, processSteps, services, stackItems, supportProblems } from '../siteData'
@@ -21,33 +22,30 @@ const formats = [
 ]
 
 export function ServicesPage() {
+  const { t, localPath } = useLanguage()
   usePageMeta()
 
   return (
     <main>
       <section className="page-hero services-hero">
-        <p className="eyebrow">Servicos</p>
-        <h1>Sistemas, suporte e infraestrutura de TI para sua empresa.</h1>
-        <p className="page-lead">
-          Do desenvolvimento de sistemas à manutenção de computadores e notebooks.
-          A gaiacode conecta software, suporte técnico e infraestrutura para reduzir
-          interrupções e simplificar o dia a dia da sua equipe.
-        </p>
+        <p className="eyebrow">{t("Servicos")}</p>
+        <h1>{t("Sistemas, suporte e infraestrutura de TI para sua empresa.")}</h1>
+        <p className="page-lead">{t("Do desenvolvimento de sistemas à manutenção de computadores e notebooks. A gaiacode conecta software, suporte técnico e infraestrutura para reduzir interrupções e simplificar o dia a dia da sua equipe.")}</p>
       </section>
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">Nossos serviços</p>
-          <h2>Da máquina de trabalho ao sistema da empresa.</h2>
+          <p className="eyebrow">{t("Nossos serviços")}</p>
+          <h2>{t("Da máquina de trabalho ao sistema da empresa.")}</h2>
         </div>
         <div className="services-grid services-grid-large">
           {services.map((service) => (
             <article className="service-card service-card-featured" key={service.title}>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
+              <h3>{t(service.title)}</h3>
+              <p>{t(service.description)}</p>
               <ul>
                 {service.bullets.map((bullet) => (
-                  <li key={bullet}>{bullet}</li>
+                  <li key={bullet}>{t(bullet)}</li>
                 ))}
               </ul>
             </article>
@@ -57,39 +55,36 @@ export function ServicesPage() {
 
       <section className="section section-alt" aria-labelledby="support-problems-title">
         <div className="section-heading">
-          <p className="eyebrow">Como podemos ajudar</p>
-          <h2 id="support-problems-title">Problemas de TI que atrapalham sua rotina.</h2>
-          <p>Reconheceu alguma dessas situações? Conte o que está acontecendo para avaliarmos o próximo passo.</p>
+          <p className="eyebrow">{t("Como podemos ajudar")}</p>
+          <h2 id="support-problems-title">{t("Problemas de TI que atrapalham sua rotina.")}</h2>
+          <p>{t("Reconheceu alguma dessas situações? Conte o que está acontecendo para avaliarmos o próximo passo.")}</p>
         </div>
         <div className="process-grid">
           {supportProblems.map((problem) => (
             <article className="service-card" key={problem.title}>
-              <h3>{problem.title}</h3>
-              <p>{problem.description}</p>
+              <h3>{t(problem.title)}</h3>
+              <p>{t(problem.description)}</p>
             </article>
           ))}
         </div>
         <div className="inline-actions">
-          <Link className="button button-primary" to="/contato">Solicitar atendimento de TI</Link>
+          <Link className="button button-primary" to={localPath("/contato")}>{t("Solicitar atendimento de TI")}</Link>
         </div>
-        <p className="support-scope">
-          O escopo, os prazos e a necessidade de atendimento presencial são alinhados após
-          entender a demanda. Peças, licenças e serviços são definidos na proposta.
-        </p>
+        <p className="support-scope">{t("O escopo, os prazos e a necessidade de atendimento presencial são alinhados após entender a demanda. Peças, licenças e serviços são definidos na proposta.")}</p>
       </section>
 
       <section className="section section-alt">
         <div className="section-heading">
-          <p className="eyebrow">Formatos de entrada</p>
-          <h2>O projeto comeca pelo recorte certo.</h2>
+          <p className="eyebrow">{t("Formatos de entrada")}</p>
+          <h2>{t("O projeto comeca pelo recorte certo.")}</h2>
         </div>
 
         <div className="process-grid">
           {formats.map((format, index) => (
             <article className="process-card" key={format.title}>
               <span className="process-index">0{index + 1}</span>
-              <h3>{format.title}</h3>
-              <p>{format.description}</p>
+              <h3>{t(format.title)}</h3>
+              <p>{t(format.description)}</p>
             </article>
           ))}
         </div>
@@ -97,24 +92,24 @@ export function ServicesPage() {
 
       <section className="section dual-section">
         <div className="dual-block">
-          <p className="eyebrow">Como trabalhamos</p>
-          <h2>Clareza antes de codigo. Entrega antes de discurso.</h2>
+          <p className="eyebrow">{t("Como trabalhamos")}</p>
+          <h2>{t("Clareza antes de codigo. Entrega antes de discurso.")}</h2>
           <div className="process-mini-list">
             {processSteps.map((step) => (
               <article key={step.title}>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
+                <h3>{t(step.title)}</h3>
+                <p>{t(step.description)}</p>
               </article>
             ))}
           </div>
         </div>
 
         <div className="dual-block dual-block-accent">
-          <p className="eyebrow">Base tecnica</p>
-          <h2>Stack moderna para produtos e sistemas corporativos.</h2>
+          <p className="eyebrow">{t("Base tecnica")}</p>
+          <h2>{t("Stack moderna para produtos e sistemas corporativos.")}</h2>
           <div className="stack-list">
             {stackItems.map((item) => (
-              <span key={item}>{item}</span>
+              <span key={item}>{t(item)}</span>
             ))}
           </div>
         </div>
@@ -122,20 +117,16 @@ export function ServicesPage() {
 
       <section className="cta-section">
         <div className="cta-band">
-          <p className="eyebrow">Proximo passo</p>
-          <h2>Se a demanda ainda esta aberta, o primeiro servico pode ser estruturar o caminho.</h2>
+          <p className="eyebrow">{t("Proximo passo")}</p>
+          <h2>{t("Se a demanda ainda esta aberta, o primeiro servico pode ser estruturar o caminho.")}</h2>
           <div className="cta-actions-inline">
             <a
               className="button button-primary"
-              href={contactLinks.whatsapp}
+              href={t(contactLinks.whatsapp)}
               target="_blank"
               rel="noreferrer"
-            >
-              Falar com um consultor
-            </a>
-            <Link className="button button-secondary" to="/cases">
-              Ver repertorio
-            </Link>
+            >{t("Falar com um consultor")}</a>
+            <Link className="button button-secondary" to={localPath("/cases")}>{t("Ver repertorio")}</Link>
           </div>
         </div>
       </section>

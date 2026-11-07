@@ -1,5 +1,8 @@
 # SEO e catálogo de serviços
 
+Nota: a versão bilíngue amplia o build para oito páginas. Consulte [Idiomas](idiomas.md)
+para URLs inglesas, detecção de preferência e hreflang. O registro abaixo descreve a implantação inicial de SEO.
+
 Atualizado em 07/11/2026.
 
 ## Objetivo e escopo

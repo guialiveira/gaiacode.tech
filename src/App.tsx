@@ -17,6 +17,10 @@ export function SiteRoutes() {
           <Route path="/servicos" element={<ServicesPage />} />
           <Route path="/cases" element={<CasesPage />} />
           <Route path="/contato" element={<ContactPage />} />
+          <Route path="/en" element={<HomePage />} />
+          <Route path="/en/services" element={<ServicesPage />} />
+          <Route path="/en/projects" element={<CasesPage />} />
+          <Route path="/en/contact" element={<ContactPage />} />
         </Route>
       </Routes>
     </>

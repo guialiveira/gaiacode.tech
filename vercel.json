@@ -13,6 +13,10 @@
     }
   ],
   "rewrites": [
+    { "source": "/en", "destination": "/en.html" },
+    { "source": "/en/services", "destination": "/en/services.html" },
+    { "source": "/en/projects", "destination": "/en/projects.html" },
+    { "source": "/en/contact", "destination": "/en/contact.html" },
     { "source": "/servicos", "destination": "/servicos.html" },
     { "source": "/cases", "destination": "/cases.html" },
     { "source": "/contato", "destination": "/contato.html" },

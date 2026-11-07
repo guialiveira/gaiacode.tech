@@ -1,4 +1,5 @@
-import { readFile, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { dirname } from 'node:path'
 import { createServer } from 'vite'
 
 // Reuse Vite's TSX transforms without a runtime server or new dependencies.
@@ -8,9 +9,12 @@ try {
   const template = await readFile('dist/index.html', 'utf8')
   for (const path of Object.keys(seoPages)) {
     const html = template
+      .replace('<html lang="pt-BR">', `<html lang="${path.startsWith('/en') ? 'en' : 'pt-BR'}">`)
       .replace(/<!--seo:start-->[\s\S]*?<!--seo:end-->/, () => renderSeoHead(path))
       .replace('<div id="root"></div>', () => `<div id="root">${renderPage(path)}</div>`)
-    await writeFile(`dist/${path === '/' ? 'index' : path.slice(1)}.html`, html)
+    const filename = `dist/${path === '/' ? 'index' : path.slice(1)}.html`
+    await mkdir(dirname(filename), { recursive: true })
+    await writeFile(filename, html)
     console.log(`HTML pré-renderizado: ${path}`)
   }
   const urls = Object.keys(seoPages).map((path) => `<url><loc>${siteUrl}${path}</loc></url>`)

@@ -1,3 +1,4 @@
+import { useLanguage } from '../language'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { contactLinks, contactOptions, processSteps } from '../siteData'
 
@@ -9,23 +10,21 @@ const messageChecklist = [
 ]
 
 export function ContactPage() {
+  const { t } = useLanguage()
   usePageMeta()
 
   return (
     <main>
       <section className="page-hero contact-hero">
-        <p className="eyebrow">Fale com a gaiacode</p>
-        <h1>Uma boa solução começa com uma conversa.</h1>
-        <p className="page-lead">
-          Conte o que sua empresa precisa. Fale com nossa equipe por e-mail ou converse
-          com um consultor pelo WhatsApp para entender o melhor caminho para o seu projeto.
-        </p>
+        <p className="eyebrow">{t("Fale com a gaiacode")}</p>
+        <h1>{t("Uma boa solução começa com uma conversa.")}</h1>
+        <p className="page-lead">{t("Conte o que sua empresa precisa. Fale com nossa equipe por e-mail ou converse com um consultor pelo WhatsApp para entender o melhor caminho para o seu projeto.")}</p>
       </section>
 
       <section className="section contact-channels" aria-labelledby="contact-channels-title">
         <div className="section-heading">
-          <p className="eyebrow">Canais de atendimento</p>
-          <h2 id="contact-channels-title">Como prefere falar com a gente?</h2>
+          <p className="eyebrow">{t("Canais de atendimento")}</p>
+          <h2 id="contact-channels-title">{t("Como prefere falar com a gente?")}</h2>
         </div>
         <div className="contact-grid">
           {contactOptions.map((option) => (
@@ -47,19 +46,19 @@ export function ContactPage() {
                   <path d="M21 11.5a9 9 0 0 1-9 9 10 10 0 0 1-4-.9L3 21l1.4-4.5a9 9 0 1 1 16.6-5Z" />
                 )}
               </svg>
-              <h3>{option.label}</h3>
-              <p className="contact-value">{option.value}</p>
-              <p className="contact-description">{option.note}</p>
+              <h3>{t(option.label)}</h3>
+              <p className="contact-value">{t(option.value)}</p>
+              <p className="contact-description">{t(option.note)}</p>
               <a
                 className={`button ${option.href.startsWith('mailto:') ? 'button-primary' : 'button-secondary'}`}
-                href={option.href}
+                href={t(option.href)}
                 target={option.href.startsWith('mailto:') ? undefined : '_blank'}
                 rel={option.href.startsWith('mailto:') ? undefined : 'noreferrer'}
               >
-                {option.action}
+                {t(option.action)}
                 <span aria-hidden="true">↗</span>
               </a>
-              <p className="contact-detail">{option.detail}</p>
+              {option.detail && <p className="contact-detail">{t(option.detail)}</p>}
             </article>
           ))}
         </div>
@@ -67,14 +66,14 @@ export function ContactPage() {
 
       <section className="section section-alt dual-section" aria-labelledby="contact-brief-title">
         <div>
-          <p className="eyebrow">Prepare sua mensagem</p>
-          <h2 id="contact-brief-title">Conte um pouco sobre o seu desafio.</h2>
-          <p>Não precisa ter um escopo fechado. Um breve contexto já ajuda a começar.</p>
+          <p className="eyebrow">{t("Prepare sua mensagem")}</p>
+          <h2 id="contact-brief-title">{t("Conte um pouco sobre o seu desafio.")}</h2>
+          <p>{t("Não precisa ter um escopo fechado. Um breve contexto já ajuda a começar.")}</p>
         </div>
         <div>
           <ul className="simple-list">
             {messageChecklist.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item}>{t(item)}</li>
             ))}
           </ul>
         </div>
@@ -82,16 +81,16 @@ export function ContactPage() {
 
       <section className="section section-alt">
         <div className="section-heading">
-          <p className="eyebrow">Próximos passos</p>
-          <h2>Da primeira conversa ao plano de execução.</h2>
+          <p className="eyebrow">{t("Próximos passos")}</p>
+          <h2>{t("Da primeira conversa ao plano de execução.")}</h2>
         </div>
 
         <div className="process-grid">
           {processSteps.map((step, index) => (
             <article className="process-card" key={step.title}>
               <span className="process-index">0{index + 1}</span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
+              <h3>{t(step.title)}</h3>
+              <p>{t(step.description)}</p>
             </article>
           ))}
         </div>
@@ -99,20 +98,16 @@ export function ContactPage() {
 
       <section className="cta-section">
         <div className="cta-band">
-          <p className="eyebrow">Vamos conversar</p>
-          <h2>Seu próximo projeto começa aqui.</h2>
+          <p className="eyebrow">{t("Vamos conversar")}</p>
+          <h2>{t("Seu próximo projeto começa aqui.")}</h2>
           <div className="cta-actions-inline">
-            <a className="button button-primary" href={contactLinks.email}>
-              Enviar e-mail
-            </a>
+            <a className="button button-primary" href={t(contactLinks.email)}>{t("Enviar e-mail")}</a>
             <a
               className="button button-secondary"
-              href={contactLinks.whatsapp}
+              href={t(contactLinks.whatsapp)}
               target="_blank"
               rel="noreferrer"
-            >
-              Falar com um consultor
-            </a>
+            >{t("Falar com um consultor")}</a>
           </div>
         </div>
       </section>

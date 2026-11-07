@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 
-const paths = ['/', '/servicos', '/cases', '/contato']
+const paths = ['/', '/servicos', '/cases', '/contato', '/en', '/en/services', '/en/projects', '/en/contact']
 const titles = new Set()
 const descriptions = new Set()
 const sitemap = await readFile('dist/sitemap.xml', 'utf8')
@@ -26,6 +26,17 @@ for (const path of paths) {
   const schema = JSON.parse(html.match(/<script id="site-schema" type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])
   assert.ok(schema['@graph'].some((item) => item.url === `https://gaiacode.tech${path}`))
   assert.ok(html.includes('<main>'), `${path}: conteúdo disponível sem JavaScript`)
+  assert.ok(html.includes(`<html lang="${path.startsWith('/en') ? 'en' : 'pt-BR'}">`))
+  for (const lang of ['pt-BR', 'en', 'x-default']) {
+    assert.ok(html.includes(`rel="alternate" hreflang="${lang}"`), `${path}: alternate ${lang}`)
+  }
+  if (path === '/en') assert.ok(html.includes('<h1>Software development and IT support</h1>'))
+  if (path.startsWith('/en')) {
+    for (const text of ['Fale conosco', 'Manutenção de computadores', 'Falar com um consultor', 'Próximos passos']) {
+      assert.ok(!html.includes(`>${text}<`), `${path}: texto sem tradução: ${text}`)
+    }
+    assert.ok(html.includes('href="/en/contact"'))
+  }
   if (path === '/') assert.ok(html.includes('<h1>Desenvolvimento de sistemas e suporte de TI</h1>'))
   if (path === '/servicos') {
     for (const text of ['Suporte técnico de TI', 'Infraestrutura de TI e redes', 'Manutenção de computadores e notebooks', 'Backup e proteção de dados', 'Computador lento ou travando?']) {

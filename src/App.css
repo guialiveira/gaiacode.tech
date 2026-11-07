@@ -25,6 +25,36 @@ main {
   backdrop-filter: blur(18px);
 }
 
+.language-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+html[lang="en"] .page-hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+.language-choice a {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+}
+
+.language-choice a:hover,
+.language-choice a[aria-current] {
+  opacity: 1;
+}
+
+.language-choice a:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -675,7 +705,16 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 18px;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.875rem;
+}
+
+.footer-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
 }
 
 .footer-links a {

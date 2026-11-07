@@ -7,6 +7,17 @@ export function usePageMeta() {
   useEffect(() => {
     const seo = getSeo(pathname)
     document.title = seo.title
+    document.documentElement.lang = seo.lang
+    for (const { lang, href } of seo.alternates) {
+      let link = document.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${lang}"]`)
+      if (!link) {
+        link = document.createElement('link')
+        link.rel = 'alternate'
+        link.hreflang = lang
+        document.head.append(link)
+      }
+      link.href = href
+    }
     for (const { key, content } of seo.meta) {
       const attribute = key.startsWith('og:') ? 'property' : 'name'
       let tag = document.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`)
