@@ -12,6 +12,8 @@ O seletor fica na mesma linha de Contato/Contact no rodapé, com bandeiras SVG d
 
 ## Manutenção e SEO
 
+A redação inglesa foi revisada para linguagem comercial natural, com termos como “IT support”, “system modernization” e “Clear plans. Practical solutions.”. A cobertura é apresentada como “Global service coverage”, sem “Brazil and abroad”; o português permanece inalterado. Referências geográficas em nomes/contextos de clientes reais não são usadas como limitação de atendimento. Atendimento global não implica promessa de disponibilidade 24/7 ou presença física mundial.
+
 `src/english.ts` contém o catálogo; os componentes usam `useLanguage()` e mantêm um único layout para os dois idiomas. Novas frases devem ganhar uma entrada em inglês. `npm run check:translations` identifica lacunas nos textos e dados públicos.
 
 O build pré-renderiza as oito páginas, define `html lang`, metadados, JSON-LD e canonical por versão. Links alternativos recíprocos `pt-BR`, `en` e `x-default` apontam às páginas equivalentes. O sitemap inclui os oito endereços. A metatag de verificação do Search Console continua no HTML.
