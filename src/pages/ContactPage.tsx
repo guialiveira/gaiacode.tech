@@ -9,10 +9,7 @@ const messageChecklist = [
 ]
 
 export function ContactPage() {
-  usePageMeta(
-    'Contato | gaiacode',
-    'Entre em contato com a gaiacode pelo atendimento@gaiacode.tech ou fale com um consultor pelo WhatsApp sobre seu projeto.',
-  )
+  usePageMeta()
 
   return (
     <main>

@@ -7,9 +7,9 @@ import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
 import { ServicesPage } from './pages/ServicesPage'
 
-function App() {
+export function SiteRoutes() {
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <Routes>
         <Route element={<SiteLayout />}>
@@ -19,8 +19,12 @@ function App() {
           <Route path="/contato" element={<ContactPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </>
   )
+}
+
+function App() {
+  return <BrowserRouter><SiteRoutes /></BrowserRouter>
 }
 
 export default App

@@ -13,21 +13,17 @@ import {
 } from '../siteData'
 
 export function HomePage() {
-  usePageMeta(
-    'gaiacode | tecnologia, software e IA aplicada',
-    'gaiacode cria software sob medida, automacoes, integracoes e IA aplicada para empresas que precisam transformar operacao em vantagem.',
-  )
+  usePageMeta()
 
   return (
     <main>
       <section className="hero-section hero-home">
         <div className="hero-media" aria-hidden="true" />
         <div className="hero-copy">
-          <p className="eyebrow">Tecnologia, software e IA aplicada</p>
-          <h1>gaiacode</h1>
+          <h1>Desenvolvimento de sistemas e suporte de TI</h1>
           <p className="hero-statement">
-            Construimos sistemas, automacoes e produtos digitais para empresas que precisam tirar
-            projetos do papel, modernizar operacoes ou escalar solucoes existentes.
+            Criamos sistemas sob medida e cuidamos da sua TI: suporte técnico, infraestrutura,
+            redes e manutenção de computadores para sua empresa trabalhar melhor.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" to="/contato">

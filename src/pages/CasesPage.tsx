@@ -3,10 +3,7 @@ import { usePageMeta } from '../hooks/usePageMeta'
 import { backgroundRefs, caseStudies, contactLinks, sectors, stats } from '../siteData'
 
 export function CasesPage() {
-  usePageMeta(
-    'Cases | gaiacode',
-    'Repertorio da gaiacode em sistemas corporativos, setor publico, energia, seguros, operacoes de campo e IA aplicada.',
-  )
+  usePageMeta()
 
   return (
     <main>

@@ -15,10 +15,15 @@ Site institucional da `gaiacode`, construido em React + TypeScript + Vite.
 npm install
 npm run dev
 npm run build
+npm run check:seo
 npm run lint
 ```
 
 ## Deploy
+
+O build pré-renderiza as quatro páginas e gera sitemap.xml e robots.txt em `dist/`.
+Metadados ficam em `src/seo.ts`. Veja [SEO e serviços](documentacao/seo-e-servicos.md)
+para fontes, decisões e passos após a publicação.
 
 O projeto inclui `vercel.json` para suportar rotas do frontend no deploy.
 

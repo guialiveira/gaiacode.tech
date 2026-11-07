@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { usePageMeta } from '../hooks/usePageMeta'
-import { contactLinks, processSteps, services, stackItems } from '../siteData'
+import { contactLinks, processSteps, services, stackItems, supportProblems } from '../siteData'
 
 const formats = [
   {
@@ -21,23 +21,25 @@ const formats = [
 ]
 
 export function ServicesPage() {
-  usePageMeta(
-    'Servicos | gaiacode',
-    'Servicos da gaiacode em software sob medida, automacoes, integracoes, IA aplicada e evolucao de sistemas.',
-  )
+  usePageMeta()
 
   return (
     <main>
-      <section className="page-hero">
+      <section className="page-hero services-hero">
         <p className="eyebrow">Servicos</p>
-        <h1>Solucoes digitais para empresas que precisam operar melhor.</h1>
+        <h1>Sistemas, suporte e infraestrutura de TI para sua empresa.</h1>
         <p className="page-lead">
-          A gaiacode combina software sob medida, automacao, integracao e IA aplicada para criar
-          sistemas que reduzem retrabalho, conectam dados e sustentam crescimento.
+          Do desenvolvimento de sistemas à manutenção de computadores e notebooks.
+          A gaiacode conecta software, suporte técnico e infraestrutura para reduzir
+          interrupções e simplificar o dia a dia da sua equipe.
         </p>
       </section>
 
       <section className="section">
+        <div className="section-heading">
+          <p className="eyebrow">Nossos serviços</p>
+          <h2>Da máquina de trabalho ao sistema da empresa.</h2>
+        </div>
         <div className="services-grid services-grid-large">
           {services.map((service) => (
             <article className="service-card service-card-featured" key={service.title}>
@@ -51,6 +53,29 @@ export function ServicesPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="section section-alt" aria-labelledby="support-problems-title">
+        <div className="section-heading">
+          <p className="eyebrow">Como podemos ajudar</p>
+          <h2 id="support-problems-title">Problemas de TI que atrapalham sua rotina.</h2>
+          <p>Reconheceu alguma dessas situações? Conte o que está acontecendo para avaliarmos o próximo passo.</p>
+        </div>
+        <div className="process-grid">
+          {supportProblems.map((problem) => (
+            <article className="service-card" key={problem.title}>
+              <h3>{problem.title}</h3>
+              <p>{problem.description}</p>
+            </article>
+          ))}
+        </div>
+        <div className="inline-actions">
+          <Link className="button button-primary" to="/contato">Solicitar atendimento de TI</Link>
+        </div>
+        <p className="support-scope">
+          O escopo, os prazos e a necessidade de atendimento presencial são alinhados após
+          entender a demanda. Peças, licenças e serviços são definidos na proposta.
+        </p>
       </section>
 
       <section className="section section-alt">

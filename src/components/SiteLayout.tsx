@@ -45,7 +45,7 @@ export function SiteLayout() {
       <footer className="footer">
         <div className="footer-brand">
           <strong>gaiacode</strong>
-          <p>Software sob medida, automacoes, integracoes e IA aplicada para empresas.</p>
+          <p>Desenvolvimento de sistemas, suporte de TI, infraestrutura e manutenção de computadores.</p>
         </div>
 
         <p className="footer-note">

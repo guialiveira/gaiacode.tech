@@ -44,6 +44,26 @@ export const beliefCards = [
 
 export const services = [
   {
+    title: 'Suporte técnico de TI',
+    description: 'Apoio para resolver falhas em sistemas, programas e equipamentos que interrompem o trabalho da sua equipe.',
+    bullets: ['Diagnóstico de erros e travamentos', 'Configuração de e-mail e impressoras', 'Instalação e atualização de programas'],
+  },
+  {
+    title: 'Infraestrutura de TI e redes',
+    description: 'Organização do ambiente de TI para conectar pessoas, equipamentos e arquivos com mais estabilidade.',
+    bullets: ['Configuração de redes e Wi-Fi', 'Servidores e compartilhamento de arquivos', 'Organização de acessos e permissões'],
+  },
+  {
+    title: 'Manutenção de computadores e notebooks',
+    description: 'Manutenção preventiva e corretiva para identificar defeitos e melhorar o desempenho dos equipamentos.',
+    bullets: ['Lentidão, aquecimento e falhas ao ligar', 'Limpeza e avaliação de componentes', 'Formatação e upgrades de SSD e memória'],
+  },
+  {
+    title: 'Backup e proteção de dados',
+    description: 'Organização de cópias de segurança e medidas de proteção para reduzir o risco de perda de arquivos.',
+    bullets: ['Configuração e revisão de backups', 'Testes de restauração de arquivos', 'Atualizações e proteção contra malware'],
+  },
+  {
     title: 'Software sob medida',
     description:
       'Sistemas web, portais, backoffices e produtos digitais construidos para regras reais de negocio.',
@@ -66,6 +86,33 @@ export const services = [
     description:
       'Organizacao de bases legadas, APIs, microsservicos, CI/CD e melhoria continua de sistemas em uso.',
     bullets: ['.NET e APIs REST', 'DDD e microsservicos', 'Pipelines e boas praticas'],
+  },
+]
+
+export const supportProblems = [
+  {
+    title: 'Computador lento ou travando?',
+    description: 'Investigamos a causa da lentidão para indicar otimização, manutenção ou upgrade de SSD e memória conforme a necessidade.',
+  },
+  {
+    title: 'Notebook esquentando ou PC sem ligar?',
+    description: 'Avaliamos alimentação, refrigeração e componentes para identificar a falha antes de recomendar reparos ou substituições.',
+  },
+  {
+    title: 'Internet caindo ou Wi-Fi fraco?',
+    description: 'Verificamos a rede local, os roteadores e a cobertura do Wi-Fi para identificar instabilidades e orientar melhorias.',
+  },
+  {
+    title: 'Precisa formatar o computador?',
+    description: 'Avaliamos se a reinstalação é necessária e alinhamos backup, programas e licenças antes de qualquer intervenção.',
+  },
+  {
+    title: 'E-mail ou impressora não funciona?',
+    description: 'Ajustamos configurações, drivers e conexões para ajudar sua equipe a retomar as tarefas do dia a dia.',
+  },
+  {
+    title: 'Arquivos sem backup ou acessos desorganizados?',
+    description: 'Estruturamos cópias de segurança, compartilhamentos e permissões para melhorar o controle sobre os dados da empresa.',
   },
 ]
 

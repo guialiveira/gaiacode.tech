@@ -13,6 +13,9 @@
     }
   ],
   "rewrites": [
+    { "source": "/servicos", "destination": "/servicos.html" },
+    { "source": "/cases", "destination": "/cases.html" },
+    { "source": "/contato", "destination": "/contato.html" },
     {
       "source": "/(.*)",
       "destination": "/index.html"
